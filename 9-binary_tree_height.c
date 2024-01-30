@@ -4,7 +4,7 @@
  * max - Finds the maximum of two integers.
  * @a: The first integer.
  * @b: The second integer.
- * Return:
+ * Return: the larger int
  * The larger of the two integers:
  * @a if @a > @b, or @b otherwise.
  */
