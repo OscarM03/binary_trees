@@ -25,26 +25,18 @@ int max(int a, int b)
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	const binary_tree_t *temp;
-	int right_height = 0, height;
-	int left_height = 0;
+	int left_height = 0, right_height = 0, height;
 
-	if (tree == NULL)
-	{
-		return (0);
-	}
-	temp = tree;
-	while (temp->right != NULL)
-	{
-		right_height++;
-		temp = temp->right;
-	}
-	temp = tree;
-	while (temp->left != NULL)
-	{
-		left_height++;
-		temp = temp->left;
-	}
+    if (tree->left != NULL)
+    {
+        left_height = 1 + binary_tree_height(tree->left);
+    } 
+
+    if (tree->right != NULL)
+    {
+        right_height = 1 + binary_tree_height(tree->right);
+    }
+
 	height = max(right_height, left_height);
 	return (height);
 }
